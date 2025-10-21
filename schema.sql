@@ -2,6 +2,7 @@ create table activities (
     id serial primary key,
     type varchar(255) not null, -- Expense or Income
     category varchar(255) not null,
+    on_date timestamp,
     description text null,
     amount decimal(16,2) not null,
     created_at timestamp default now(),
