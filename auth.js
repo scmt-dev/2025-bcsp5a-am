@@ -6,7 +6,7 @@ async function signIn() {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     message.style.display = 'none';
-    if(!email) {
+    if (!email) {
         message.style.display = 'block';
         message.style.color = 'red';
         message.style.backgroundColor = 'rgba(255, 0, 0, 0.1)';
@@ -25,7 +25,7 @@ async function signIn() {
         })
     });
 
-    if(req.status === 401) {
+    if (req.status === 401) {
         message.style.display = 'block';
         message.style.color = 'red';
         message.style.backgroundColor = 'rgba(255, 0, 0, 0.1)';
@@ -35,7 +35,7 @@ async function signIn() {
 
     // get response from api
     const data = await req.json();
-    if(req.status === 200) {
+    if (req.status === 200) {
         message.style.display = 'block';
         message.style.color = 'green';
         message.style.backgroundColor = 'rgba(0, 255, 0, 0.1)';
@@ -49,4 +49,37 @@ async function signIn() {
         return;
     }
     console.log(data);
+}
+
+async function signUp() {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const name = document.getElementById('name').value;
+    const req = await fetch(`${API_URL}/signup/email-password`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            email,
+            password,
+            options: {
+                displayName: name
+            }
+        })
+    });
+    const data = await req.json();
+     console.log(data);
+    if(req.status === 200) {
+        message.style.display = 'block';
+        message.style.color = 'green';
+        message.style.backgroundColor = 'rgba(0, 255, 0, 0.1)';
+        message.innerText = 'Sign up successfully';
+        return;
+    }
+    message.style.display = 'block';
+    message.style.color = 'red';
+    message.style.backgroundColor = 'rgba(255, 0, 0, 0.1)';
+    message.innerText = data?.message || 'Sign up failed';
+   
 }
