@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="lo">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ເກມບວກເລກ</title>
+    <link rel="stylesheet" href="game.css">
+  </head>
+  <body>
+    <div class="game-container">
+      <div class="header">
+        <h1 class="title">ເກມບວກເລກ</h1>
+        <button class="start-btn" id="startBtn">ເລີ່ມເກມໃໝ່</button>
+        <div class="timer" id="timer">10:00</div>
+      </div>
+
+      <div id="gameArea">
+        <div class="question-info">
+          ຈຳນວນຄຳຖາມ: <span id="questionCount">0</span> / 20
+        </div>
+
+        <div class="score-display">
+          <div class="score-item">
+            <div class="score-label">ຄະແນນສະສົມ</div>
+            <div class="score-value correct" id="correctScore">0</div>
+          </div>
+          <div class="score-item">
+            <div class="score-label">ຕອບຜິດ</div>
+            <div class="score-value wrong" id="wrongScore">0</div>
+          </div>
+        </div>
+
+        <div class="question" id="question">21+34 =</div>
+
+        <div class="answers" id="answersContainer">
+          <button class="answer-btn">55</button>
+          <button class="answer-btn">56</button>
+          <button class="answer-btn">32</button>
+        </div>
+      </div>
+
+      <div class="game-over" id="gameOver">
+        <h2>ເກມຈົບແລ້ວ!</h2>
+        <p>ຄະແນນສຸດທ້າຍ: <span id="finalScore">0</span></p>
+        <p>
+          ຕອບຖືກ: <span id="finalCorrect">0</span> | ຕອບຜິດ:
+          <span id="finalWrong">0</span>
+        </p>
+        <button class="start-btn" onclick="startGame()">ເລີ່ມໃໝ່</button>
+      </div>
+    </div>
+
+    <script src="./game.js"></script>
+  </body>
+</html>

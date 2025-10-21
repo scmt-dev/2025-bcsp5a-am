@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <style>
+        #message {
+            padding: 10px;
+            border-radius: 6px;
+            border:1px solid #ccc;
+            margin: 10px 0;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Sign Up Account</h1>
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name">
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" id="email">
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" id="password">
+        </div>
+        <div id="message"></div>
+        <button onclick="signIn()">Sign Up</button>
+        <p>
+            I have an account <a href="signin.html">Sign In</a>
+        </p>
+    </div>
+    <script src="auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>
+                <img src="" alt="">
+                <h1>Product 1</h1>
+                <p>Price: $100</p>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        const API_URL = 'https://dummyjson.com/products';
+        async function fetchProducts() {
+            const req = await fetch(API_URL);
+            const data = await req.json();
+            console.log(data);
+        }
+        fetchProducts();
+    </script>
+</body>
+</html>

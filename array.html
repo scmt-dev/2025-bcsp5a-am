@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+  </head>
+  <body>
+    <script>
+      //                1.   2    3   4   5
+      const numbers = ['1', 'b', 'c', 'd','e'];
+      // display the array
+      console.log(numbers);
+      // display the array length
+      console.log(numbers.length);
+      numbers.push(7);
+      console.log(numbers);
+      const [x,y,z, test] = numbers;
+      console.log(x);
+      console.log(y);
+      console.log(z);
+      const address = {
+        city: 'Xaysettha',
+        village: 'Nongbron',
+        home: '06',
+        colors: ['red', 'green', 'blue'],
+        person: {
+          name: 'Mark',
+          age: 30
+        }
+      }
+      const { person, city, colors } = address;
+      const { name, age } = person;
+      const [red,green,blue] = address.colors;
+      console.log(colors[0]);
+      console.log(address.colors[1]);
+      console.log(address.person);
+      console.log(person);
+      console.log(person.name);
+      console.log(city);
+      console.log(address);
+
+
+      const person2 = {
+        ...address,
+        person: {
+          name: 'J',
+          age:26
+        },
+        colors: [...colors, 'yellow']
+      }
+      console.log(person2);
+
+      
+    </script>
+  </body>
+</html>

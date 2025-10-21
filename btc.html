@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTC Price</title>
+</head>
+<body>
+    <h1>BTC Price</h1>
+    <h2 id="price">111,000 USD</h2>
+    <h3 id="buy">-</h3>
+    <small>
+        Last updated:
+        <span id="time">-</span>
+    </small>
+    <button onclick="fetchBTCPrice()">Refresh</button>
+
+    <script>
+        const API_URL = 'https://blockchain.info/ticker';
+        async function fetchBTCPrice() {
+            const req = await fetch(API_URL);
+            const data = await req.json();
+            console.log(data);
+            const price = document.getElementById('price');
+            price.innerText = '₿'+ data.USD.last + ' USD';
+            const buy = document.getElementById('buy');
+            buy.innerText = 'Buy: ' + data.USD.buy + ' USD';
+            const time = document.getElementById('time');
+            const now = new Date();
+            time.innerText = now.toISOString();
+        }
+        fetchBTCPrice();
+        // cal function every 5s
+        setInterval(fetchBTCPrice, 5000);
+    </script>
+</body>
+</html>
