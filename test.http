@@ -1,0 +1,10 @@
+###
+GET https://wpitfaredsxfeudbwuzd.hasura.ap-southeast-1.nhost.run/api/rest/activities
+
+###
+POST https://wpitfaredsxfeudbwuzd.hasura.ap-southeast-1.nhost.run/v1/graphql HTTP/1.1
+content-type: application/json
+
+{
+    "query" : "{ activities { id type amount } }"
+}
